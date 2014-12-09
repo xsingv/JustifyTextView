@@ -7,5 +7,24 @@ JustifyTextView
     xmlns:custom="http://schemas.android.com/apk/res/com.xs.justifytextview"
     custom:lineSpacing="10sp"
 ```
+```java
+    TypedArray a = context.getTheme().obtainStyledAttributes(attrs,
+				R.styleable.JustifyTextView, defStyle, 0);
+		int n = a.getIndexCount();
+		for (int i = 0; i < n; i++)
+		{
+			int attr = a.getIndex(i);
+			switch (attr)
+			{
+			case R.styleable.JustifyTextView_lineSpacing:
+				lineSpacing = a.getDimensionPixelSize(attr, (int) TypedValue
+						.applyDimension(TypedValue.COMPLEX_UNIT_SP, 3,
+								getResources().getDisplayMetrics()));
+				break;
+			}
+
+		}
+		a.recycle();
+```
 ###效果图
-![](http://www.baidu.com/img/bdlogo.gif)  
+![运行效果](https://github.com/xsingHu/JustifyTextView/blob/master/images/justifytextView.png)  
