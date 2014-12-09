@@ -2,7 +2,7 @@ JustifyTextView
 ===============
   两端分散对齐的TextView,支持中英文混编
 
-###设置行距的属性;其他属性直接使用原TextView的属性,在Activity中使用也是直接使用TextView
+######设置行距的属性;其他属性直接使用原TextView的属性,在Activity中使用也是直接使用TextView
 ```xml
     xmlns:custom="http://schemas.android.com/apk/res/com.xs.justifytextview"
     custom:lineSpacing="10sp"
@@ -26,5 +26,5 @@ JustifyTextView
 		}
 		a.recycle();
 ```
-###效果图
+###效果图:blush::blush::blush:
 ![运行效果](https://github.com/xsingHu/JustifyTextView/blob/master/images/justifytextView.png)  
