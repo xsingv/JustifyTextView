@@ -14,14 +14,16 @@ import android.widget.TextView;
 public class MainActivity extends Activity
 {
 
+	TextView tv;
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState)
 	{
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
+		tv = (TextView) findViewById(R.id.main_tv);
 		// 此处为子类JustifyTextView对象,使用方法与原生TextView相同
-		TextView tv = (TextView) findViewById(R.id.main_tv);
-		tv.setText(getAssetsString(this, "2.txt"));
+		tv.setText(getAssetsString(this, Messages.getString("MainActivity.0"))); //$NON-NLS-1$
 	}
 
 	public String getAssetsString(Context context, String fileName)
@@ -37,7 +39,7 @@ public class MainActivity extends Activity
 			String line;
 			while ((line = reader.readLine()) != null)
 			{
-				line += ("\n");
+				line += (Messages.getString("MainActivity.1")); //$NON-NLS-1$
 				sb.append(line);
 			}
 			reader.close();
