@@ -1,5 +1,6 @@
 JustifyTextView
 ===============
+  实现方式过旧，有bug，不要用于生产环境。
   两端分散对齐的TextView,支持中英文混编
 
 ######设置行距的属性;其他属性直接使用原TextView的属性,在Activity中使用也是直接使用TextView
