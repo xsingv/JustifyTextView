@@ -28,4 +28,4 @@ JustifyTextView
 		a.recycle();
 ```
 ###效果图:blush::blush::blush:
-![运行效果](https://github.com/xsingHu/JustifyTextView/blob/master/images/justifytextView.png)  
+![运行效果](/images/justifytextView.png)  
