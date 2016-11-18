@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">JustifyTextView</string>
+    <string name="hello_world">It’s not your fault if you can’t remember people’s names\n
+记不住别人的名字 不是你的错\n
+Once, at a party, I was introduced to a friend of a friend. We shook hands, I told her my name, she told me hers. Then she did something that I was ever so grateful for.\n
+曾经在一次聚会上，我的朋友把我介绍给他的朋友。我们握手，互通姓名。然后她做了一件让我很感激的事。\n
+“Hang on,” she said. “Can you say your name again? I wasn’t really listening.”\n
+“等一下，”她说，“您能重复一下您的名字吗？我刚才没注意听。”\n
+It’s not your fault if you can’t remember people’s names\n
+记不住别人的名字 不是你的错\n
+Once, at a party, I was introduced to a friend of a friend. We shook hands, I told her my name, she told me hers. Then she did something that I was ever so grateful for.\n
+曾经在一次聚会上，我的朋友把我介绍给他的朋友。我们握手，互通姓名。然后她做了一件让我很感激的事。\n
+“Hang on,” she said. “Can you say your name again? I wasn’t really listening.”\n
+“等一下，”她说，“您能重复一下您的名字吗？我刚才没注意听。”\n</string>
+    <string name="action_settings">Settings</string>
+
+</resources>

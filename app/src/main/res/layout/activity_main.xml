@@ -1,0 +1,27 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    tools:context="com.xs.justifytextview.MainActivity" >
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" >
+
+        <com.xs.justifytextview.JustifyTextView
+            xmlns:custom="http://schemas.android.com/apk/res/com.xs.justifytextview"
+            android:id="@+id/main_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#333e3e3e"
+            android:paddingBottom="30dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:textColor="#ff3333"
+            android:textSize="18sp"
+            android:textStyle="normal"
+            android:typeface="serif"
+            custom:lineSpacing="10sp" />
+    </RelativeLayout>
+
+</ScrollView>

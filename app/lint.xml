@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<lint>
+    <issue id="DrawAllocation">
+        <ignore path="src/com/xs/justifytextview/JustifyTextView.java" />
+    </issue>
+    <issue id="NewApi" severity="ignore" />
+</lint>
