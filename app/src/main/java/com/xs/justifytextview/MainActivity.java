@@ -19,7 +19,7 @@ public class MainActivity extends Activity
 	{
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
-		// 此处为子类JustifyTextView对象,使用方法与原生TextView相同
+		// 姝ゅ涓哄瓙绫籎ustifyTextView瀵硅薄,浣跨敤鏂规硶涓庡師鐢烼extView鐩稿悓
 		TextView tv = (TextView) findViewById(R.id.main_tv);
 		tv.setText(getAssetsString(this, "2.txt"));
 	}
@@ -27,7 +27,7 @@ public class MainActivity extends Activity
 	public String getAssetsString(Context context, String fileName)
 	{
 		StringBuffer sb = new StringBuffer();
-		// 根据语言选择加载
+		// 鏍规嵁璇█閫夋嫨鍔犺浇
 		try
 		{
 			AssetManager am = context.getAssets();

@@ -13,26 +13,26 @@ import android.util.TypedValue;
 import android.widget.TextView;
 
 /**
- * Á½¶Ë·ÖÉ¢¶ÔÆëµÄTextView,Ö§³ÖÖĞÓ¢ÎÄ»ì±à</br> Äã¿ÉÒÔÊ¹ÓÃÏÂÃæµÄ×Ô¶¨ÒåÊôĞÔÉèÖÃĞĞ¾à,ÆäËûÊôĞÔºÍÔ­ÉúTextViewÒ»Ö±²¢ÇÒÓĞĞ§</br>
+ * ä¸¤ç«¯åˆ†æ•£å¯¹é½çš„TextView,æ”¯æŒä¸­è‹±æ–‡æ··ç¼–</br> ä½ å¯ä»¥ä½¿ç”¨ä¸‹é¢çš„è‡ªå®šä¹‰å±æ€§è®¾ç½®è¡Œè·,å…¶ä»–å±æ€§å’ŒåŸç”ŸTextViewä¸€ç›´å¹¶ä¸”æœ‰æ•ˆ</br>
  * xmlns:custom="http://schemas.android.com/apk/res/com.xs.justifytextview"<br>
  * custom:lineSpacing="10sp"<br>
- * 
+ *
  * @author xsing
- * 
+ *
  */
 public class JustifyTextView extends TextView
 {
 	private static final String TAG = "JustifyTextView";
-	/** ÎÄ±¾ */
+	/** æ–‡æœ¬ */
 	private String mText;
 
-	/** »­±Ê */
+	/** ç”»ç¬” */
 	private Paint mPaint;
 
-	/** ÎÄ±¾¿í¶È */
+	/** æ–‡æœ¬å®½åº¦ */
 	private int textWidth;
 
-	/** ĞĞ¾à */
+	/** è¡Œè· */
 	private float lineSpacing;
 
 	public JustifyTextView(Context context, AttributeSet attrs)
@@ -45,14 +45,14 @@ public class JustifyTextView extends TextView
 		this(context, null);
 	}
 
-	public float mBaikeTextHeight = 0;// ÎÄ±¾¸ß¶È
+	public float mBaikeTextHeight = 0;// æ–‡æœ¬é«˜åº¦
 	public int mFontHeight = 0;
 
 	public JustifyTextView(Context context, AttributeSet attrs, int defStyle)
 	{
 		super(context, attrs, defStyle);
 		/**
-		 * »ñµÃÎÒÃÇËù¶¨ÒåµÄ×Ô¶¨ÒåÑùÊ½ÊôĞÔ,ĞĞ¾àlineSpacing
+		 * è·å¾—æˆ‘ä»¬æ‰€å®šä¹‰çš„è‡ªå®šä¹‰æ ·å¼å±æ€§,è¡Œè·lineSpacing
 		 */
 		TypedArray a = context.getTheme().obtainStyledAttributes(attrs,
 				R.styleable.JustifyTextView, defStyle, 0);
@@ -62,23 +62,23 @@ public class JustifyTextView extends TextView
 			int attr = a.getIndex(i);
 			switch (attr)
 			{
-			case R.styleable.JustifyTextView_lineSpacing:
-				lineSpacing = a.getDimensionPixelSize(attr, (int) TypedValue
-						.applyDimension(TypedValue.COMPLEX_UNIT_SP, 3,
-								getResources().getDisplayMetrics()));
-				break;
+				case R.styleable.JustifyTextView_lineSpacing:
+					lineSpacing = a.getDimensionPixelSize(attr, (int) TypedValue
+							.applyDimension(TypedValue.COMPLEX_UNIT_SP, 3,
+									getResources().getDisplayMetrics()));
+					break;
 			}
 
 		}
 		a.recycle();
 
-		// TODO »ñÈ¡Ô­TextViewµÄ»­±Ê,±£³ÖÔ­ÊôĞÔ²»±ä
+		// TODO è·å–åŸTextViewçš„ç”»ç¬”,ä¿æŒåŸå±æ€§ä¸å˜
 		mPaint = this.getPaint();
-		// »ñÈ¡ÎÄ±¾ÑÕÉ«ÉèÖÃ¸ø»­±Ê
+		// è·å–æ–‡æœ¬é¢œè‰²è®¾ç½®ç»™ç”»ç¬”
 		mPaint.setColor(this.getCurrentTextColor());
 	}
 
-	/** µ¥´Êµ¥ÔªÊı×é,Ö÷ÒªÕë¶ÔÓ¢ÎÄ */
+	/** å•è¯å•å…ƒæ•°ç»„,ä¸»è¦é’ˆå¯¹è‹±æ–‡ */
 	private String[] words;
 
 	private void arrayTowords()
@@ -131,7 +131,7 @@ public class JustifyTextView extends TextView
 	}
 
 	/**
-	 * @return lines-int ÖØĞÂÅÅ°æºóÎÄµµµÄĞĞÊı
+	 * @return lines-int é‡æ–°æ’ç‰ˆåæ–‡æ¡£çš„è¡Œæ•°
 	 */
 	private int getLines()
 	{
@@ -155,7 +155,7 @@ public class JustifyTextView extends TextView
 				{
 					linewidth = textWidth;
 				}
-				if(mPaint.measureText(words[i]) != mPaint.measureText("ÖĞ"))
+				if(mPaint.measureText(words[i]) != mPaint.measureText("ä¸­"))
 				{
 					linewidth += (measureText + blankwidth);
 				} else
@@ -191,7 +191,7 @@ public class JustifyTextView extends TextView
 
 					} else
 					{
-						// TODO ºËĞÄ,ÖğĞĞÖğ¸ö»æÖÆµ¥´Êword
+						// TODO æ ¸å¿ƒ,é€è¡Œé€ä¸ªç»˜åˆ¶å•è¯word
 						canvas.drawText(words[k],
 								widthPoint + getPaddingLeft(),
 								(float) (mPaint.getTextSize() + lineSpacing)
@@ -199,8 +199,8 @@ public class JustifyTextView extends TextView
 					}
 					widthPoint = widthPoint + mPaint.measureText(words[k])
 							+ ((textWidth - linewidth) / (i - point - 1));
-					// Èç¹û²»ÊÇÖĞÎÄ,Ôö¼ÓÒ»¸ö¿Õ¸ñ
-					if(mPaint.measureText(words[k]) != mPaint.measureText("¹ı"))
+					// å¦‚æœä¸æ˜¯ä¸­æ–‡,å¢åŠ ä¸€ä¸ªç©ºæ ¼
+					if(mPaint.measureText(words[k]) != mPaint.measureText("è¿‡"))
 					{
 						widthPoint += blankwidth;
 					}
@@ -212,13 +212,13 @@ public class JustifyTextView extends TextView
 				widthPoint = 0;
 				i--;
 			} else
-			{ // Öğ¸öµ¥´ÊÀÛ¼Æ,³¤¶È¹»Ò»ĞĞ»æÖÆÒ»´Îor»»ĞĞ
+			{ // é€ä¸ªå•è¯ç´¯è®¡,é•¿åº¦å¤Ÿä¸€è¡Œç»˜åˆ¶ä¸€æ¬¡oræ¢è¡Œ
 				if(String.valueOf(words[i]).equals("\n"))
 				{
 					linewidth = textWidth;
 				}
-				// Ó¢ÎÄÃ¿¸öµ¥´ÊºóÃæÓĞÒ»¸ö¿Õ¸ñ
-				if(mPaint.measureText(words[i]) != mPaint.measureText("ÖĞ"))
+				// è‹±æ–‡æ¯ä¸ªå•è¯åé¢æœ‰ä¸€ä¸ªç©ºæ ¼
+				if(mPaint.measureText(words[i]) != mPaint.measureText("ä¸­"))
 				{
 					linewidth += (measureText + blankwidth);
 				} else
@@ -235,29 +235,29 @@ public class JustifyTextView extends TextView
 	{
 		Log.d(TAG, "==============onMeasure");
 		super.onMeasure(widthMeasureSpec, heightMeasureSpec);
-		// ´Ë´¦µÃµ½µÄÊÇTextViewµÄ¿í¶È;¸ß¶ÈĞèÖØĞÂ¼ÆËã
+		// æ­¤å¤„å¾—åˆ°çš„æ˜¯TextViewçš„å®½åº¦;é«˜åº¦éœ€é‡æ–°è®¡ç®—
 		int widthSize = MeasureSpec.getSize(widthMeasureSpec);
 
 		int width = widthSize;
-		// ¼õÈ¥×óÓÒÎÄ±¾±ß¾àµÄÎÄ±¾ÇøÓò¿í¶È
+		// å‡å»å·¦å³æ–‡æœ¬è¾¹è·çš„æ–‡æœ¬åŒºåŸŸå®½åº¦
 		textWidth = widthSize - getPaddingLeft() - getPaddingRight();
-		int height = 1000;// TextView¸ß¶È
+		int height = 1000;// TextViewé«˜åº¦
 
-		// »ñÈ¡text,·ÖÎö¹¹Ôìµ¥´ÊÊı×é,²¢¼ÆËã³öĞĞÊı
+		// è·å–text,åˆ†ææ„é€ å•è¯æ•°ç»„,å¹¶è®¡ç®—å‡ºè¡Œæ•°
 		mText = (String) this.getText();
 		arrayTowords();
 		int lines = getLines();
 		Log.d(TAG, "lines" + lines);
 
-		float fontSpacing = mPaint.getFontSpacing();// ÍÆ¼öĞĞ¼ä¾à
+		float fontSpacing = mPaint.getFontSpacing();// æ¨èè¡Œé—´è·
 		FontMetricsInt fontMetricsInt = mPaint.getFontMetricsInt();
 		int fontheight = fontMetricsInt.bottom - fontMetricsInt.top;
 
-		height = (int) (lines * (mPaint.getTextSize() + lineSpacing));// 0.8Æ«´ó
+		height = (int) (lines * (mPaint.getTextSize() + lineSpacing));// 0.8åå¤§
 		Log.d(TAG,
 				"width" + width + "  height:" + height + " fontheight:"
 						+ fontheight + " textSize:" + mPaint.getTextSize()
-						+ " fontSpacing:" + fontSpacing + "mPaintÊôĞÔ:"
+						+ " fontSpacing:" + fontSpacing + "mPaintå±æ€§:"
 						+ mPaint.getColor());
 		setMeasuredDimension(widthSize, height + getPaddingBottom());
 	}
